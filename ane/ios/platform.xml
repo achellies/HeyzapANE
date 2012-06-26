@@ -1,0 +1,9 @@
+<platform xmlns="http://ns.adobe.com/air/extension/3.1">
+    <sdkVersion>4.0</sdkVersion>
+    <linkerOptions>
+	<option>-F..\..\lib</option>
+        <option>-framework Foundation</option>
+        <option>-framework Heyzap</option>
+    </linkerOptions>
+</platform>
+
