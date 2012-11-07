@@ -19,7 +19,17 @@ package com.heyzap.extensions
 		{
 			trace("Heyzap: checkin called");
 		}
+
+		public function submitScore(score : String, displayScore : String, levelId : String) : void
+		{
+			trace("Heyzap: submitScore called");
+		}
 		
+		public function showLeaderboards() : void
+		{
+			trace("Heyzap: showLeaderboards called");
+		}
+
 		public function isSupported() : Boolean
 		{
 			trace("Heyzap: isSupported called");

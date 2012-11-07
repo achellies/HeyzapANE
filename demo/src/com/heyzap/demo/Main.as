@@ -30,23 +30,74 @@ package com.heyzap.demo
 			h = new Heyzap();
 			h.load(true, "123456", "mycoolscheme");
 
-			// Add checkin button
-			var txt : TextField = new TextField();
-			txt.defaultTextFormat = new TextFormat('Verdana', 50, 0x000000);
-			txt.text = "Check In!";
-			txt.autoSize = TextFieldAutoSize.LEFT;
-			txt.background = txt.border = true;
-			txt.selectable = false;			
-			var btn : Sprite = new Sprite();
-			btn.mouseChildren = false;
-			btn.addChild(txt);
-			btn.buttonMode = true;			
-			addChild(btn);		
-			btn.addEventListener(MouseEvent.CLICK, function(event : MouseEvent) : void 
-				{
-					// Check in
-					h.checkin("Example checkin text");
-				});
+			var txt : TextField;
+			if (h.isSupported())
+			{
+				// Add checkin button
+				txt = new TextField();
+				txt.defaultTextFormat = new TextFormat('Verdana', 50, 0x000000);
+				txt.text = "Check In!";
+				txt.autoSize = TextFieldAutoSize.LEFT;
+				txt.background = txt.border = true;
+				txt.selectable = false;			
+				var btn : Sprite = new Sprite();
+				btn.mouseChildren = false;
+				btn.addChild(txt);
+				btn.buttonMode = true;			
+				addChild(btn);		
+				btn.addEventListener(MouseEvent.CLICK, function(event : MouseEvent) : void 
+					{
+						// Check in
+						h.checkin("Example checkin text");
+					});
+
+				// Add show leaderboards button
+				txt = new TextField();
+				txt.defaultTextFormat = new TextFormat('Verdana', 50, 0x000000);
+				txt.text = "Show Leaderboards!";
+				txt.autoSize = TextFieldAutoSize.LEFT;
+				txt.background = txt.border = true;
+				txt.selectable = false;			
+				btn = new Sprite();
+				btn.mouseChildren = false;
+				btn.addChild(txt);
+				btn.buttonMode = true;	
+				btn.y = 100;
+				addChild(btn);		
+				btn.addEventListener(MouseEvent.CLICK, function(event : MouseEvent) : void 
+					{
+						// Show leaderboards
+						h.showLeaderboards();
+					});
+
+				// Add post score button
+				txt = new TextField();
+				txt.defaultTextFormat = new TextFormat('Verdana', 50, 0x000000);
+				txt.text = "Post Score!";
+				txt.autoSize = TextFieldAutoSize.LEFT;
+				txt.background = txt.border = true;
+				txt.selectable = false;			
+				btn = new Sprite();
+				btn.mouseChildren = false;
+				btn.addChild(txt);
+				btn.buttonMode = true;		
+				btn.y = 200;
+				addChild(btn);		
+				btn.addEventListener(MouseEvent.CLICK, function(event : MouseEvent) : void 
+					{
+						// Post score
+						h.submitScore("10", "10", "1");
+					});
+			}
+			else
+			{
+				txt = new TextField();
+				txt.defaultTextFormat = new TextFormat('Verdana', 50, 0x000000);
+				txt.text = "Heyzap not supported!";
+				txt.autoSize = TextFieldAutoSize.LEFT;
+				txt.selectable = false;			
+				addChild(txt);				
+			}
 		}
 		
 		private function deactivate(e:Event):void 

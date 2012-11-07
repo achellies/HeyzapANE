@@ -1,4 +1,4 @@
-package com.heyzap.extensions
+﻿package com.heyzap.extensions
 {
 	import flash.external.ExtensionContext;
 	
@@ -27,5 +27,18 @@ package com.heyzap.extensions
 		{
 			return exContext != null && exContext.call("isSupported");
 		}
+		
+		public function submitScore(score : String, displayScore : String, levelId : String) : void
+		{
+			if (exContext != null)
+				exContext.call("submitScore", score, displayScore, levelId);
+		}
+		
+		public function showLeaderboards() : void
+		{
+			if (exContext != null)
+				exContext.call("showLeaderboards");
+		}
+		
 	}
 }

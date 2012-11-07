@@ -15,6 +15,8 @@ public class ExtensionContext extends FREContext
 		functionMap.put("load", new LoadFunction());
 		functionMap.put("checkin", new CheckinFunction());
 		functionMap.put("isSupported", new IsSupportedFunction());
+		functionMap.put("submitScore", new SubmitScoreFunction());
+		functionMap.put("showLeaderboards", new ShowLeaderboardsFunction());
 	    return functionMap;
 	}
 

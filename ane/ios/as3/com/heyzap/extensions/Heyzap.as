@@ -23,6 +23,16 @@ package com.heyzap.extensions
 				exContext.call("checkin", text);
 		}
 		
+		public function submitScore(score : String, displayScore : String, levelId : String) : void
+		{
+			trace("Heyzap: submitScore not supported");
+		}
+		
+		public function showLeaderboards() : void
+		{
+			trace("Heyzap: showLeaderboards not supported");
+		}
+
 		public function isSupported() : Boolean
 		{
 			return exContext != null && exContext.call("isSupported");
