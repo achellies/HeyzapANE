@@ -98,6 +98,16 @@ The demo was created by:
 	unzip -q ext\HeyzapExtension.ane -d ext_unpacked\HeyzapExtension.ane
 	adl -screensize %SCREEN_SIZE% "%APP_XML%" "%APP_DIR%" -extdir ext_unpacked
 
+- In SetupSDK.bat add the variable JAVA_SDK
+		
+- Add to Packager.bat:
+
+	if errorlevel 1 goto failed
+	if "%PLATFORM%" NEQ "android" goto skip-heyzap-res
+	call AddHeyzapRes.bat
+	if errorlevel 1 goto failed
+	:skip-heyzap-res
+
 - Add folder 'ext' and copy HeyzapExtension.ane to it
 	
 	Right HeyzapExtension.ane and select 'Add To Library'
@@ -116,3 +126,4 @@ The demo was created by:
 
 - Make sure you don't call NativeApplication.nativeApplication.exit() in your deactivation handler (activating Heyzap deactivates your app)
 
+- Make sure you're running Java 6 and not Java 7 (this will cause signing errors!)

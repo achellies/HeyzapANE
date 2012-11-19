@@ -1,11 +1,13 @@
 :user_configuration
 
+:: Path to Java SDK
+set JAVA_SDK=C:\Program Files\Java\jdk1.6.0_29
+
 :: Path to Flex SDK
 set FLEX_SDK=C:\Program Files (x86)\FlashDevelop\Tools\flexsdk
 
 :: Path to Android SDK
-set ANDROID_SDK=C:\Program Files (x86)\FlashDevelop\Tools\android
-
+set ANDROID_SDK=C:\Program Files (x86)\Android\android-sdk
 
 :validation
 if not exist "%FLEX_SDK%\bin" goto flexsdk
