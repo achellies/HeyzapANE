@@ -31,6 +31,7 @@
 	<target name="init" depends="clean">
 		<mkdir dir="build"/>
 		<mkdir dir="build/Android-ARM/"/>
+		<mkdir dir="build/Android-ARM/res/"/>
 		<mkdir dir="build/iPhone-ARM"/>
 		<mkdir dir="build/default"/>
 		<copy file="extension.xml" tofile="build/extension.xml" overwrite="yes"/>
@@ -68,6 +69,9 @@
 		<unzip src="tmp/Extension.swc" dest="tmp"/>
 		<copy file="tmp/library.swf" tofile="build/Android-ARM/library.swf"/>
 		<delete dir="tmp"/>
+		<copy todir="build/Android-ARM/res">
+		  	<fileset dir="android/native/res/"/>
+		</copy>
    	</target>
 
 	<!-- iOS: Compile lib (not in default target as it runs only on MacOS -->

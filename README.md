@@ -100,14 +100,6 @@ The demo was created by:
 
 - In SetupSDK.bat add the variable JAVA_SDK
 		
-- Add to Packager.bat:
-
-	if errorlevel 1 goto failed
-	if "%PLATFORM%" NEQ "android" goto skip-heyzap-res
-	call AddHeyzapRes.bat
-	if errorlevel 1 goto failed
-	:skip-heyzap-res
-
 - Add folder 'ext' and copy HeyzapExtension.ane to it
 	
 	Right HeyzapExtension.ane and select 'Add To Library'

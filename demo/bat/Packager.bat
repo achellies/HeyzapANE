@@ -44,10 +44,6 @@ echo.
 call adt -package -target %TYPE%%TARGET% %OPTIONS% %SIGNING_OPTIONS% "%OUTPUT%" "%APP_XML%" %FILE_OR_DIR% -extdir ext
 echo.
 if errorlevel 1 goto failed
-if "%PLATFORM%" NEQ "android" goto skip-heyzap-res
-call AddHeyzapRes.bat
-if errorlevel 1 goto failed
-:skip-heyzap-res
 goto end
 
 :certificate
